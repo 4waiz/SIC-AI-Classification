@@ -68,12 +68,9 @@ def main():
             conf = float(np.max(probs))
             name = labels[idx] if labels and idx < len(labels) else f"class_{idx}"
             st.subheader("Prediction")
-            st.write(f"{name} ({conf:.4f})")
+            st.write(name)
             if audio_enabled:
-                key = f"{name}-{int(conf*100)}"
-                if st.session_state.get("_last_pred") != key:
-                    speak(f"{name}. {int(conf*100)} percent")
-                    st.session_state["_last_pred"] = key
+                speak(name)
 
 if __name__ == "__main__":
     main()
