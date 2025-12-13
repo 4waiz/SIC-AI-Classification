@@ -206,7 +206,7 @@ def handle_photo(img: Image.Image, source: str, model, labels, audio_enabled: bo
 
 def main():
     st.set_page_config(
-        page_title="AI Based Safety Navigation System",
+        page_title="AI-Based Early Hazard Awareness System for Visually Impaired Users",
         page_icon=":compass:",
         layout="wide",
     )
@@ -218,7 +218,7 @@ def main():
         """
         <div class="hero">
             <div class="pill">AI Safety | Vision Intelligence</div>
-            <div class="hero-title">AI Based Safety Navigation System</div>
+            <div class="hero-title">AI-Based Early Hazard Awareness System for Visually Impaired Users</div>
             <div class="hero-subtitle">
                 Real-time hazard awareness with on-device intelligence. Stream live video, capture moments, or upload footage to classify scenes instantly.
             </div>
