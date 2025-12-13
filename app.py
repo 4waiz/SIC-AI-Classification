@@ -155,14 +155,21 @@ def inject_styles():
             background: #2ae077;
             box-shadow: 0 0 0 6px rgba(42, 224, 119, 0.12);
         }
+        [data-testid="stTabs"] > div > div {
+            background: transparent;
+            border: none;
+        }
         [data-testid="stTabs"] button {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.07);
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.08);
             color: var(--text);
+            border-radius: 12px 12px 0 0;
+            box-shadow: none;
         }
         [data-testid="stTabs"] button[aria-selected="true"] {
-            background: linear-gradient(135deg, rgba(106, 227, 255, 0.28), rgba(155, 139, 255, 0.24));
-            border-color: rgba(255,255,255,0.16);
+            background: linear-gradient(135deg, rgba(106, 227, 255, 0.32), rgba(155, 139, 255, 0.26));
+            border-color: rgba(255,255,255,0.18);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.25);
         }
         .stCheckbox>div>label, .stFileUploader label, .stCameraInput label {
             font-weight: 600;
