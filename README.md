@@ -21,7 +21,7 @@ The goal is to warn visually impaired users about hazards early. A transfer-lear
 - **Upload**: classifies PNG, JPG, JPEG, or BMP images.
 - **Audio feedback**: a toggle (on by default) speaks the predicted label. A label is repeated only when it changes.
 - **Prediction cards**: show the label and model confidence, with a status chip for whether the model loaded.
-- **Preprocessing**: images are converted to RGB, resized to 224 x 224, and scaled to `[0, 1]`.
+- **Preprocessing**: images are converted to RGB and resized to 224 x 224. Pixel values stay in `[0, 255]`, the same range the model saw in training (the notebook's `normalize()` step does not rescale float32 images).
 
 ## How It Works
 

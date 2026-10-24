@@ -32,7 +32,13 @@ def load_labels():
 def preprocess(img: Image.Image, size):
     img = img.convert("RGB")
     img = img.resize(size)
-    arr = np.array(img).astype("float32") / 255.0
+    # Keep raw 0-255 pixel values: that is the scale the model was trained on.
+    # In MobileNetV2_Model.ipynb, image_dataset_from_directory already yields float32
+    # images in [0, 255], so normalize()'s tf.image.convert_image_dtype(image, tf.float32)
+    # returns them unchanged (it only rescales when converting from an integer dtype).
+    # The saved model has no Rescaling layer either, so dividing by 255 here would feed
+    # the model inputs on a different scale from training.
+    arr = np.array(img).astype("float32")
     arr = np.expand_dims(arr, axis=0)
     return arr
 
